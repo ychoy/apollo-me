@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const AlbumList = () =>
+     (<ul>
+       <li>Album 1</li>
+       <li>Album 2</li>
+     </ul>);
 
+class App extends Component {
+   render() {
+     return (
+       <div className="App">
+         <div className="App-header">
+           <img src={logo} className="App-logo" alt="logo" />
+           <h2>Welcome to Apollo</h2>
+         </div>
+         <AlbumsList />
+       </div>
+     );
+   }
+ }
 export default App;
