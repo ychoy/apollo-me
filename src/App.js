@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const AlbumList = () =>
+const AlbumsList = () =>
      (<ul>
        <li>Album 1</li>
        <li>Album 2</li>
