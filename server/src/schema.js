@@ -3,6 +3,9 @@ import {
   addMockFunctionsToSchema, 
 } from 'graphql-tools';
 
+// connect graphql schema to mock data
+addMockFunctionsToSchema({ schema });
+
 const typeDefs = `
 type Channel {
    id: ID!                # "!" denotes a required field
