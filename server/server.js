@@ -10,6 +10,8 @@ const PORT = 4000;
 
 const server = express();
 
+//In order to make our server respond to GraphQL requests, tell Express to pass requests to our graphqlExpress middleware, which executes the queries against the schema
+
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
 }));
