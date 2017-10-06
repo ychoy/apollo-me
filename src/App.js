@@ -10,10 +10,10 @@ import {
 
 const client = new ApolloClient();
 
-const AlbumsList = () =>
+const ChannelsList = () =>
      (<ul>
-       <li>Album 1</li>
-       <li>Album 2</li>
+       <li>Channel 1</li>
+       <li>Channel 2</li>
      </ul>);
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
            <img src={logo} className="App-logo" alt="logo" />
            <h2>Welcome to Apollo</h2>
          </div>
-         <AlbumsList />
+         <ChannelsList />
        </div>
      );
    }

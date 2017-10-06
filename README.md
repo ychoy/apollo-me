@@ -1,5 +1,5 @@
 # Apollo-Me
-Track your favorite albums
+Real time chat application
 
 ## Folder Structure
 

@@ -1,12 +1,12 @@
 export const typeDefs = `
-type Album {
+type Channel {
    id: ID!                # "!" denotes a required field
    name: String
 }
 # This type specifies the entry points into our API. In this case
-# there is only one - "albums" - which returns a list of albums.
+# there is only one - "channel" - which returns a list of channels.
 
 type Query {
-   albums: [Album]    # "[]" means this is a list of albums
+   channels: [Channel]    # "[]" means this is a list of albums
 }
 `;
