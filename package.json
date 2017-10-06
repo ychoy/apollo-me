@@ -21,5 +21,17 @@
   },
   "devDependencies": {
     "react-scripts": "^1.0.14"
-  }
+  },
+  "description": "Real time chat application",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ychoy/apollo-me.git"
+  },
+  "author": "Yan-Yin Choy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ychoy/apollo-me/issues"
+  },
+  "homepage": "https://github.com/ychoy/apollo-me#readme"
 }
