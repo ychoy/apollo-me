@@ -2,9 +2,8 @@ import {
   makeExecutableSchema,
   addMockFunctionsToSchema, 
 } from 'graphql-tools';
-
+import { resolvers } from './resolvers';
 // connect graphql schema to mock data
-addMockFunctionsToSchema({ schema });
 
 const typeDefs = `
 type Channel {
@@ -18,5 +17,5 @@ type Query {
 }
 `;
 
-const schema = makeExecutableSchema({ typeDefs });
+const schema = makeExecutableSchema({ typeDefs, resolvers });
 export { schema };
