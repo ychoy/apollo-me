@@ -16,4 +16,9 @@ server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
 }));
 
+// Set up GraphiQL by adding the graphiqlExpress middleware from graphql-server and point it to the GraphQL endpoint
+server.use('/graphiql', graphiqlExpress({
+  endpointURL: '/graphql'
+}));
+
 server.listen(PORT, () => console.log(`GraphQL Server is now running on http://localhost:${PORT}`));
