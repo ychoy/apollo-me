@@ -1,4 +1,5 @@
-const channels = [{
+const channels = 
+[{
   id: 1,
   name: 'libraries',
 }, {
@@ -6,10 +7,19 @@ const channels = [{
   name: 'parks',
 }];
 
+let nextId = 3;
+
 export const resolvers = {
   Query: {
     channels: () => {
       return channels;
+    },
+  },
+  Mutation: {
+    addChannel: (root, args) => {
+      const newChannel = { id: nextId++, name: args.name };
+      channels.push(newChannel);
+      return newChannel;
     },
   },
 };
