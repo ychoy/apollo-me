@@ -5,10 +5,14 @@ import {
 } from 'graphql-server-express';
 import bodyParser from 'body-parser';
 import { schema } from './src/schema';
+import cors from 'cors';
 
 const PORT = 4000;
 
 const server = express();
+
+//allow cross-origin requests from our front-end origin
+server.use('*', cors({ origin: 'http://localhost:3000' }));
 
 //In order to make our server respond to GraphQL requests, tell Express to pass requests to our graphqlExpress middleware, which executes the queries against the schema
 
