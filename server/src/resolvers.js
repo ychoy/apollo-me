@@ -2,9 +2,17 @@ const channels =
 [{
   id: 1,
   name: 'libraries',
+  messages: [{
+    id: '2',
+    text: 'Dr. Martin Luther King Jr. Library has an open data workshop to use open data to solve problems',
+  }]
 }, {
   id: 2,
   name: 'parks',
+  messages: [{
+    id: '1',
+    text: 'Yoga in the park at lunch?',
+  }]
 }];
 
 let nextId = 3;
