@@ -32,6 +32,9 @@ export const channelsListQuery = gql`
     }
   }
 `;
+/*Pass pollInterval option with channelsListQuery. 
+  Rerun the query every 5 seconds. UI will be updated with latest list of channels 
+  */ 
 
 export default graphql(channelsListQuery, {
   options: { pollInterval: 5000 },

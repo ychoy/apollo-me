@@ -13,9 +13,9 @@ const AddChannel = ({ mutate }) => {
   const handleKeyUp = (evt) => {
     if (evt.keyCode === 13) {
       evt.persist();
-      mutate({
-        variables: { name: evt.target.value },
-        refetchQueries: [ { query: channelsListQuery }],
+      mutate({ /* Tell Apollo Client we want to refetch channels after our mutation completes */ 
+        variables: { name: evt.target.value }, 
+        refetchQueries: [ { query: channelsListQuery }], /*Pass it via refectchQueries option to the call to mutate. Then export query from ChannelsListWithData and import it into AddChannel. This allows new channels to update instantly after refetching list of channels */
       })
       .then( res => {
         evt.target.value = '';
