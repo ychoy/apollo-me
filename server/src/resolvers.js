@@ -1,12 +1,11 @@
 const channels = 
-/*[{
+[{
   id: 1,
   name: 'libraries',
 }, {
   id: 2,
   name: 'parks',
 }];
-*/
 
 let nextId = 3;
 
