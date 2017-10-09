@@ -1,3 +1,13 @@
+import React from 'react';
+import MessageList from './MessageList';
+import ChannelPreview from './ChannelPreview';
+import NotFound from './NotFound';
+
+import {
+    gql,
+    graphql,
+} from 'react-apollo';
+
 /* check if the query is loading (data.loading), 
   then check to make sure that there is no error (data.error), 
   and finally render the channel name and MessagesList 
