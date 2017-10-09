@@ -5,21 +5,41 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import './App.css';
-import NotFound from './components/NotFound';
-import ChannelsListWithData from './components/ChannelsListWithData';
 
-import { 
-  ApolloClient, 
-  ApolloProvider, 
-  createNetworkInterface 
+import './App.css';
+import ChannelsListWithData from './components/ChannelsListWithData';
+import NotFound from './components/NotFound';
+import ChannelDetails from './components/ChannelDetails';
+
+import {
+  ApolloClient,
+  ApolloProvider,
+  createNetworkInterface,
+  toIdValue,
 } from 'react-apollo';
 
+
 const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000/graphql' });
+networkInterface.use([{
+  applyMiddleware(req, next) {
+    setTimeout(next, 500);
+  },
+}]);
+
+function dataIdFromObject (result) {
+  if (result.__typename) {
+    if (result.id !== undefined) {
+      return `${result.__typename}:${result.id}`;
+    }
+  }
+  return null;
+}
 
 const client = new ApolloClient({
   networkInterface,
+  dataIdFromObject,
 });
+
 
 class App extends Component {
   render() {
