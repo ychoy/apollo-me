@@ -1,34 +1,36 @@
-const channels = 
-[{
-  id: 1,
+const channels = [{
+  id: '1',
   name: 'libraries',
   messages: [{
+    id: '1',
+    text: 'poetry reading',
+  }, {
     id: '2',
-    text: 'Dr. Martin Luther King Jr. Library has an open data workshop to use open data to solve problems',
+    text: 'book signing',
   }]
 }, {
-  id: 2,
+  id: '2',
   name: 'parks',
   messages: [{
-    id: '1',
-    text: 'Yoga in the park at lunch?',
+    id: '3',
+    text: 'yoga at lunch?',
+  }, {
+    id: '4',
+    text: 'lets play soccer',
   }]
 }];
-
 let nextId = 3;
+let nextMessageId = 5;
 
 export const resolvers = {
   Query: {
     channels: () => {
       return channels;
     },
-    channel: (root, { id }) => {
-      return channels.find(channel => channel.id === id);
-    },
   },
   Mutation: {
     addChannel: (root, args) => {
-      const newChannel = { id: nextId++, name: args.name };
+      const newChannel = { id: String(nextId++), messages: [], name: args.name };
       channels.push(newChannel);
       return newChannel;
     },
